@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ghigbie/NodeTodoAPI/issues"
   },
-  "homepage": "https://github.com/ghigbie/NodeTodoAPI#readme"
+  "homepage": "https://github.com/ghigbie/NodeTodoAPI#readme",
+  "dependencies": {
+    "mongodb": "^2.2.5"
+  }
 }
