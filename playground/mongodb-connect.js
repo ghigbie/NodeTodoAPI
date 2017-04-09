@@ -16,12 +16,12 @@ MongoClient.connect("mongodb://localhost:27017/TodoApp", (err, db) => {
     }
     console.log("Connected to MongoDB server");
 
-    db.collection("Todos").find().toArray().then({
-        console.log("Todos:");
-        cossole.log(JSON.stringify(docs, undefined, 2));
-    }, (err) => {
-        console.log("Unable to fetch todos", err);
-    });
+    // db.collection("Todos").find().toArray().then({
+    //     console.log("Todos:");
+    //     cossole.log(JSON.stringify(docs, undefined, 2));
+    // }, (err) => {
+    //     console.log("Unable to fetch todos", err);
+    // });
 
     // db.collection("Todos").insertOne({
     //     text: "Something to do",
@@ -44,5 +44,5 @@ MongoClient.connect("mongodb://localhost:27017/TodoApp", (err, db) => {
     //     console.log(result.ops[0]._id.getTimestamp());
     // });
 
-    //db.close();
+    db.close();
 });
