@@ -1,9 +1,11 @@
 //const MongoClient = require("mongodb").MongoClient;
-const {MongoClient, ObjectID} = require("mongodb");
+const {MongoClient, ObjectID} = require("mongodb"); //this is object destructuring as well
 
-var user = {name: "Joe", age: 67};
-var {name} = user;
-console.log(name);
+var obj = new ObjectID();
+console.log(obj);
+// var user = {name: "Yuki", age: 67};
+// var {name} = user; //this is object destructuring in ES6
+// console.log(name);
 
 //the first argument for a mongoClient.connect cold be any url from any site
 
