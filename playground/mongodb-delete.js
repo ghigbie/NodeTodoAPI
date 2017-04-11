@@ -7,10 +7,14 @@ MongoClient.connect("mongodb://localhost:27017/TodoApp", (err, db)  => {
     console.log("Connected to MongoDB server");
 
     //deteleMany
-        db.collection("Todos").deleteMany({text: "Something to do"});
+        db.collection("Todos").deleteMany({text: "Something to do"}).then((result) => {
+            console.log(result);
+        });
 
     //deleteOne
-
+        db.collection("Todos").deleteOne({text: "Eat lunch"}).then((result) => {
+            console.log(result);
+        });
 
     //findOneAndDelete
 
