@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb//localhost:27017/TodoApp");
+mongoose.connect("mongodb://localhost:27017/TodoApp");
 
 var Todo = mongoose.model("Todo", {
     text: {
-        type: String
+        type: String,
+        required: true,
+        minlength: 1
     },
 
     completed: {
@@ -18,7 +20,9 @@ var Todo = mongoose.model("Todo", {
 });
 
 var newTodo = new Todo({
-    text: "Cook dinner"
+    text: "",
+    completed: false,
+    completedAt: 5
 });
 
 newTodo.save().then((doc) => { //this method saves the todo to the database
