@@ -29,3 +29,5 @@ app.get("*", (req, res) => {
 app.listen(3000, process.env.IP, () => {
     console.log("Server is up and listening on ");
 });
+
+module.exports = {app};
