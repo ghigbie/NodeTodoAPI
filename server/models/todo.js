@@ -5,7 +5,7 @@ var Todo = mongoose.model("Todo", {
         type: String,
         required: true,
         minlength: 1,
-        trim: true
+        trim: true //"trim" set to true will remove any leading or trailing white space
     },
 
     completed: {
@@ -19,4 +19,4 @@ var Todo = mongoose.model("Todo", {
     }
 });
 
-module.exports = {Todo}; 
+module.exports = {Todo};
