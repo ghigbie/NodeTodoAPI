@@ -14,7 +14,7 @@ app.post("/todos", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-    res.show("This page is not found");
+    res.send("This page is not found");
 });
 
 app.listen(3000, process.env.IP, () => {
