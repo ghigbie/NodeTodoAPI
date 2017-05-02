@@ -4,8 +4,18 @@ const expect  = require("expect"),
 const {app}  = require("./../server"),
       {Todo} = require("./../models/todo");
 
+const todos = [{
+    text: "Walk the dog"
+},{
+    text: "Catch the javelina"
+},{
+    text: "Chase the coyote"
+}];
+
 beforeEach((done) => {
-    Todo.remove({}).then(() => done());
+    Todo.remove({}).then(() => {
+        return Todo.insertMany(todos);
+    }).then(() => done());
 });
 
 describe("POST /todos", () => {
