@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
 
 let userSchema = new mongoose.Schema({
-
-});
-
-
-var User = mongoose.model("User", {
     email: {
         type: String,
         required: true,
@@ -13,5 +8,7 @@ var User = mongoose.model("User", {
         trim: true //removes any leading or trailing whitespace
     }
 });
+
+var User = mongoose.model("User", userSchema);
 
 module.exports = {User};
