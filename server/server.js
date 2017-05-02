@@ -18,7 +18,7 @@ app.post("/todos", (req, res) => {
         res.send(doc);
     }, (e) => {
         res.status(400).send(e);
-        console.log("There was an error (400)");
+        console.log("There was an error: ", e);
     });
 });
 
