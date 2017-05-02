@@ -26,8 +26,9 @@ app.get("*", (req, res) => {
     res.send("This page is not found");
 });
 
-app.listen(3000, process.env.IP, () => {
-    console.log("Server is up and listening on ");
+let port = 3000;
+app.listen(port, process.env.IP, () => {
+    console.log(`Server is up and listening on ${port}.`);
 });
 
 module.exports = {app};
