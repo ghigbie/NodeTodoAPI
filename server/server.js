@@ -26,7 +26,7 @@ app.get("*", (req, res) => {
     res.send("This page is not found");
 });
 
-let port = 3000;
+let port = 3010;
 app.listen(port, process.env.IP, () => {
     console.log(`Server is up and listening on ${port}.`);
 });
