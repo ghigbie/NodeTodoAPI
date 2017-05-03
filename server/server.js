@@ -1,9 +1,10 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+const express    = require("express"),
+      bodyParser = require("body-parser");
 
-const {mongoose} = require("./db/mongoose");
-const {Todo} = require("./models/todo");
-const {User} = require("./models/user");
+const {mongoose} = require("./db/mongoose"),
+      {objectID} = require("mongoose"),
+          {Todo} = require("./models/todo"),
+          {User} = require("./models/user");
 
 const app = express();
 
