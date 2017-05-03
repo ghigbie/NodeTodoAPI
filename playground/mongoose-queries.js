@@ -1,12 +1,12 @@
-const {mongoose} = require(./../server/db/mongoose),
-          {Todo} = require(./../server/models/todo);
+const {mongoose} = require("./../server/db/mongoose"),
+          {Todo} = require("./../server/models/todo");
 
-let id = "59093cd4c7897f9766717970";
+let id = "59093ea741c08dbc665470fc";
 
 Todo.find({
     _id: id
 }).then((todos) => {
-    console.log('Todos', todo);
+    console.log("Todos: ", todos);
 }, (e) => {
     console.log("There was an error: ", e);
 });
