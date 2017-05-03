@@ -5,11 +5,11 @@ const {app}  = require("./../server"),
       {Todo} = require("./../models/todo");
 
 const todos = [{
-    text: "Walk the dog"
+    text: "Walk the Dog"
 },{
-    text: "Catch the javelina"
+    text: "Catch the Javelina"
 },{
-    text: "Chase the coyote"
+    text: "Chase the Coyote"
 }];
 
 beforeEach((done) => {

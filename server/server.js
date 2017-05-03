@@ -22,6 +22,16 @@ app.post("/todos", (req, res) => {
     });
 });
 
+//SHOW route
+app.get("/todos", (req, res) => {
+    Todo.find().then((todos) => {
+        res.send({todos}); //sending an objec instead of an array allows for more flexibility
+    }, (e) => {
+        res.status(400).send(e);
+        console.log("There was an error: ", e);
+    });
+});
+
 app.get("*", (req, res) => {
     res.send("This page is not found");
 });
