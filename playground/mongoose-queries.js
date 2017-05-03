@@ -42,9 +42,29 @@ Todo.findById(todoID).then((todo) => {
 }).catch((e) => console.log(e));
 
 User.find({
-    _id: userID;
+    _id: userID
 }).then((users) => {
     consol.log("Users: " users);
 }, (e) => {
     console.log("There was an error: ", e);
 });
+
+User.findOne({
+    _id: userID
+}).then((user) => {
+    if(!user){
+        return console.log("ID was not found in the database");
+    }
+    console.log("Found one user ID: ", user);
+}, (e) => {
+    console.log("There was an error ", e);
+});
+
+User.findById({
+    _id: userID
+}).then((user) => {
+    if(!user){
+        return console.log("ID was not found in the database");
+    }
+    console.log("Found one user by ID: ", user);
+}).catch((e) => console.log(e));
