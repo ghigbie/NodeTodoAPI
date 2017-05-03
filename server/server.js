@@ -34,7 +34,7 @@ app.get("/todos", (req, res) => {
 });
 
 //SHOW ROUTE - shows individual todo
-app.get("/todo/:id", (req, res) => {
+app.get("/todos/:id", (req, res) => {
     Todo.findOne({
         _id: id
     }).then((todo) => {
