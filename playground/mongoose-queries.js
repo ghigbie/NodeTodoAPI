@@ -19,6 +19,7 @@ Todo.find({
     _id: todoID
 }).then((todos) => {
     console.log("Todos: ", todos);
+    console.log("Tdoo: ", JSON.stringify(todos[0], undefined, 2));
 }, (e) => {
     console.log("There was an error: ", e);
 });
@@ -29,7 +30,7 @@ Todo.findOne({
     if(!todo){
         return console.log("ID was not found in the database");
     }
-    console.log("The one todo: ", todo);
+    console.log("The one todo: ", JSON.stringify(todo, undefined, 2));
 }, (e) => {
     console.log("There was an error: ", e);
 });
@@ -38,13 +39,14 @@ Todo.findById(todoID).then((todo) => {
     if(!todo){
         return console.log("ID was not found in the database");
     }
-    console.log("Found one object by ID: ", todo);
+    console.log("Found one object by ID: ", JSON.stringify(todo, undefined, 2));
 }).catch((e) => console.log(e));
 
 User.find({
     _id: userID
 }).then((users) => {
     console.log("Users: ", users);
+    console.log("User: ", JSON.stringify(users[0], undefined, 2));
 }, (e) => {
     console.log("There was an error: ", e);
 });
@@ -55,7 +57,7 @@ User.findOne({
     if(!user){
         return console.log("ID was not found in the database");
     }
-    console.log("Found one user ID: ", user);
+    console.log("Found one user ID: ", JSON.stringify(user, undefined, 2));
 }, (e) => {
     console.log("There was an error ", e);
 });
@@ -66,5 +68,5 @@ User.findById({
     if(!user){
         return console.log("ID was not found in the database");
     }
-    console.log("Found one user by ID: ", user);
+    console.log("Found one user by ID: ", JSON.stringify(user, undefined, 2));
 }).catch((e) => console.log(e));
