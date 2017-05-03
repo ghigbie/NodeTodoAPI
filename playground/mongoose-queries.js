@@ -5,13 +5,13 @@ const {mongoose} = require("./../server/db/mongoose"),
           {User} = require("./../server/models/user");
 
 let todoID = "59093ea741c08dbc665470fc";
-let userID = "";
+let userID = "58ec3b14fed67ccb360c0274";
 
 if(!ObjectID.isValid(todoID)){
     console.log("The Todo ID is not valid.");
 }
 
-if(!ObejctID.isValid(userID)){
+if(!ObjectID.isValid(userID)){
     console.log("The User ID is not valid.");
 }
 
@@ -44,7 +44,7 @@ Todo.findById(todoID).then((todo) => {
 User.find({
     _id: userID
 }).then((users) => {
-    consol.log("Users: " users);
+    console.log("Users: ", users);
 }, (e) => {
     console.log("There was an error: ", e);
 });
