@@ -35,11 +35,38 @@ app.get("/todos", (req, res) => {
 
 //SHOW ROUTE - shows individual todo
 app.get("/todos/:id", (req, res) => {
+    let id = req.params.id;
     Todo.findOne({
         _id: id
     }).then((todo) => {
-        res.send(({todo}));
-        console.log("One todo found: ", JSON.stringify(todo, undefined, 2));
+        res.send({todo});
+        console.log("One todo was found: ", JSON.stringify(todo, undefined, 2));
+    }, (e) => {
+        res.status(400).send(e);
+        console.log("There was an error: ", e);
+    });
+});
+
+app.get("/todos/:id", (req, res) => {
+    let id = req.params.id;
+    Todo.findOne({
+        _id: id
+    }).then((todo) => {
+        res.send(todo);
+        console.log("One todo was found: ", JSON.stringify(todo, undefined, 2));
+    }, (e) => {
+        res.status(400).send(e);
+        console.log("There was an error: ", e);
+    });
+});
+
+app.get("/todos/:id", (req, res) => {
+    let id = req.params.id;
+    Todo.findOne({
+        _id: id
+    }).then((todo) => {
+        res.send(todo);
+        console.log("One todo was found: ", JSON.stringify(todo, undefined, 2));
     }, (e) => {
         res.status(400).send(e);
         console.log("There was an error: ", e);
