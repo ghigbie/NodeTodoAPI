@@ -18,3 +18,9 @@ Todo.findOne({
 }, (e) => {
     console.log("There was an error: ", e);
 });
+
+Todo.findById(id).then((todo) => {
+    console.log("Found one object by ID: ", todo)
+}, (e) => {
+    console.log("There was an error: ", e);
+});
