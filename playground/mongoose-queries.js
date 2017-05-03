@@ -14,12 +14,18 @@ Todo.find({
 Todo.findOne({
     _id: id
 }).then((todo) => {
+    if(!todo){
+        return console.log("ID was not found in the database");
+    }
     console.log("The one todo: ", todo);
 }, (e) => {
     console.log("There was an error: ", e);
 });
 
 Todo.findById(id).then((todo) => {
+    if(!todo){
+        return console.log("ID was not found in the database");
+    }
     console.log("Found one object by ID: ", todo)
 }, (e) => {
     console.log("There was an error: ", e);
