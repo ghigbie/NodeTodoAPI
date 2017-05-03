@@ -22,10 +22,23 @@ app.post("/todos", (req, res) => {
     });
 });
 
-//SHOW route
+//CREATE ROUTE - shows all routes
 app.get("/todos", (req, res) => {
     Todo.find().then((todos) => {
         res.send({todos}); //sending an objec instead of an array allows for more flexibility
+    }, (e) => {
+        res.status(400).send(e);
+        console.log("There was an error: ", e);
+    });
+});
+
+//SHOW ROUTE - shows individual todo
+app.get("/todo/:id", (req, res) => {
+    Todo.findOne({
+        _id: id
+    }).then((todo) => {
+        res.send(({todo}));
+        console.log("One todo found: ", JSON.stringify(todo, undefined, 2));
     }, (e) => {
         res.status(400).send(e);
         console.log("There was an error: ", e);
