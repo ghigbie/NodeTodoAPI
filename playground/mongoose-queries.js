@@ -8,7 +8,11 @@ let todoID = "59093ea741c08dbc665470fc";
 let userID = "";
 
 if(!ObjectID.isValid(todoID)){
-    console.log("ID is not valid");
+    console.log("The Todo ID is not valid.");
+}
+
+if(!ObejctID.isValid(userID)){
+    console.log("The User ID is not valid.");
 }
 
 Todo.find({
@@ -36,6 +40,11 @@ Todo.findById(todoID).then((todo) => {
     }
     console.log("Found one object by ID: ", todo);
 }).catch((e) => console.log(e));
-// }, (e) => {
-//     console.log("There was an error: ", e);
-// });
+
+User.find({
+    _id: userID;
+}).then((users) => {
+    consol.log("Users: " users);
+}, (e) => {
+    console.log("There was an error: ", e);
+});
