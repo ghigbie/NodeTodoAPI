@@ -1,12 +1,18 @@
 const {ObjectID} = require("mongodb");
 
 const {mongoose} = require("./../server/db/mongoose"),
-          {Todo} = require("./../server/models/todo");
+          {Todo} = require("./../server/models/todo"),
+          {User} = require("./../server/models/user");
 
-let id = "59093ea741c08dbc665470fc";
+let todoID = "59093ea741c08dbc665470fc";
+let userID = "";
+
+if(!ObjectID.isValid(todoID)){
+    console.log("ID is not valid");
+}
 
 Todo.find({
-    _id: id
+    _id: todoID
 }).then((todos) => {
     console.log("Todos: ", todos);
 }, (e) => {
@@ -14,7 +20,7 @@ Todo.find({
 });
 
 Todo.findOne({
-    _id: id
+    _id: todoID
 }).then((todo) => {
     if(!todo){
         return console.log("ID was not found in the database");
@@ -24,11 +30,12 @@ Todo.findOne({
     console.log("There was an error: ", e);
 });
 
-Todo.findById(id).then((todo) => {
+Todo.findById(todoID).then((todo) => {
     if(!todo){
         return console.log("ID was not found in the database");
     }
-    console.log("Found one object by ID: ", todo)
-}, (e) => {
-    console.log("There was an error: ", e);
-});
+    console.log("Found one object by ID: ", todo);
+}).catch((e) => console.log(e));
+// }, (e) => {
+//     console.log("There was an error: ", e);
+// });
