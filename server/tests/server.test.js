@@ -80,7 +80,13 @@ describe("GET /todos" , () => {
 });
 
 describe("GET /todos/:id", () => {
-    if("should return todo doc", (doc) {
-
-    })
-})
+    it("should return todo doc", (done) => {
+        request(app)
+            .get(`/todos/${todos[0]._id.toHexString()}`) //This is the array of todos above getting the object id and converting it to string
+            .expect(200)
+            .expect((res) => {
+                expect(res.body.todo.text).toBe(todos[0].text)
+            })
+            .end(done);
+    });
+});
