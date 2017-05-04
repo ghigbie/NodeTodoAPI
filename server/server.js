@@ -43,7 +43,11 @@ app.get("/todos/:id", (req, res) => {
     Todo.findById({
         _id: id
     }).then((todo) => {
-        res.send(todo);
+        if(!todo){
+            res.status(404).send();
+            return console.log("This is not a valid todo");
+        }
+        res.send({todo});
         console.log("One todo was found: ", JSON.stringify(todo, undefined, 2));
     }, (e) => {
         res.status(400).send();
