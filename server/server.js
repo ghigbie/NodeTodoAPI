@@ -1,8 +1,8 @@
 const express    = require("express"),
-      bodyParser = require("body-parser");
+      bodyParser = require("body-parser"),
+      {ObjectID} = require("mongodb");
 
 const {mongoose} = require("./db/mongoose"),
-      {ObjectID} = require("mongodb"),
           {Todo} = require("./models/todo"),
           {User} = require("./models/user");
 
