@@ -1,14 +1,18 @@
-const expect  = require("expect"),
-      request = require("supertest");
+const expect     = require("expect"),
+      request    = require("supertest"),
+      {ObjectID} = require("mongodb");
 
 const {app}  = require("./../server"),
       {Todo} = require("./../models/todo");
 
 const todos = [{
+    _id: new ObjectID(),
     text: "Walk the Dog"
 },{
+    _id: new ObjectID(),
     text: "Catch the Javelina"
 },{
+    _id: new ObjectID(),
     text: "Chase the Coyote"
 }];
 
@@ -74,3 +78,9 @@ describe("GET /todos" , () => {
             .end(done); //no need for function because nothing is async here
     });
 });
+
+describe("GET /todos/:id", () => {
+    if("should return todo doc", (doc) {
+
+    })
+})
