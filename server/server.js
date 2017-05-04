@@ -62,7 +62,7 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, process.env.IP, () => {
-    console.log(`Server is up and listening on ${port}.`);
+    console.log(`Started up at port ${port}.`);
 });
 
 module.exports = {app};
