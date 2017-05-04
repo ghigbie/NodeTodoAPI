@@ -11,9 +11,6 @@ if(!ObjectID.isValid(todoID)){
     console.log("The Todo ID is not valid.");
 }
 
-if(!ObjectID.isValid(userID)){
-    console.log("The User ID is not valid.");
-}
 
 Todo.find({
     _id: todoID
