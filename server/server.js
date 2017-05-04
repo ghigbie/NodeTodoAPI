@@ -36,13 +36,17 @@ app.get("/todos", (req, res) => {
 //SHOW ROUTE - shows individual todo
 app.get("/todos/:id", (req, res) => {
     let id = req.params.id;
-    Todo.findOne({
+    if(!ObjectID.isValid(id)){
+        res.status(404).send();
+        return console.log("ID is not valid. No object could be found");
+    }
+    Todo.findById({
         _id: id
     }).then((todo) => {
-        res.send({todo});
+        res.send(todo);
         console.log("One todo was found: ", JSON.stringify(todo, undefined, 2));
     }, (e) => {
-        res.status(400).send(e);
+        res.status(400).send();
         console.log("There was an error: ", e);
     });
 });
