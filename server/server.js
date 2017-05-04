@@ -7,6 +7,7 @@ const {mongoose} = require("./db/mongoose"),
           {User} = require("./models/user");
 
 const app = express();
+const port = process.env.PORT || 3010;
 
 app.use(bodyParser.json());
 
@@ -60,7 +61,6 @@ app.get("*", (req, res) => {
     res.send("This page is not found");
 });
 
-let port = 3010;
 app.listen(port, process.env.IP, () => {
     console.log(`Server is up and listening on ${port}.`);
 });
